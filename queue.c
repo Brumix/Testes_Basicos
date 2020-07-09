@@ -55,6 +55,7 @@ void dequeue()
 {
     QUEUE *temp = NULL;
     temp = head;
+    free(head);
     head = temp->pnext;
 }
 
@@ -62,7 +63,6 @@ void printqueue()
 {
 
     QUEUE *current;
-    current = (QUEUE *)malloc(sizeof(QUEUE));
     current = head;
     while (current != NULL)
     {
@@ -73,5 +73,4 @@ void printqueue()
 
         current = current->pnext;
     }
-    free(current);
 }

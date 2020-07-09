@@ -12,7 +12,6 @@ void find(VALUE *, int valor);
 void addreverse(int valor);
 void removelist(VALUE **head, int valor);
 
-
 VALUE *head = NULL;
 VALUE *top = NULL;
 
@@ -25,9 +24,13 @@ int main(void)
     }
 
     printLits(head);
-    removelist(&head, 0);
-    removelist(&head, 19);
-    removelist(&head, 12);
+    for (int i = 0; i < 20; i ++)
+    {
+        
+        removelist(&head, i);
+     i++;
+    }
+
     find(head, 12);
     find(head, 1);
     printLits(head);
@@ -38,11 +41,13 @@ int main(void)
         addreverse(i);
     }
     printLits(top);
-    removelist(&top, 0);
-    removelist(&top, 19);
-    removelist(&top, 12);
+    for (int i = 0; i < 20; i ++)
+    {
+        removelist(&top, i);
+        i++;
+    }
     find(top, 19);
-    find(top, 17);
+    find(top, 14);
     printLits(top);
 
     return 0;
@@ -70,7 +75,7 @@ void add(int valor)
 
 void printLits(VALUE *head)
 {
-    VALUE *curent = malloc(sizeof(VALUE));
+    VALUE *curent = NULL;
     curent = head;
     while (curent != NULL)
     {
@@ -119,7 +124,7 @@ void removelist(VALUE **head, int valor)
     temp = *head;
     if (temp->val == valor)
     {
-
+        free(*head);
         *head = temp->pnext;
         return;
     }

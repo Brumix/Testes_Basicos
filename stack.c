@@ -43,17 +43,15 @@ void push(int val)
 void pop()
 {
   STACK *temp;
-  temp = (STACK *)malloc(sizeof(STACK));
   temp = head;
+  free(head);
   head = temp->pnext;
-  free(temp);
 }
 
 void pirntStacck()
 {
 
   STACK *curent;
-  curent = malloc(sizeof(STACK));
   curent = head;
   while (curent != NULL)
   {
@@ -63,6 +61,4 @@ void pirntStacck()
       printf("%d-", curent->value);
     curent = curent->pnext;
   }
-
-  free(curent);
 }
