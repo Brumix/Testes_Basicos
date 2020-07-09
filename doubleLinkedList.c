@@ -12,20 +12,27 @@ typedef struct doubleLinkedList
 void add(int val);
 void print_double_front_end(void);
 void print_double_end_front(void);
+void remove_double(int val);
 
 DOUBLE *head = NULL;
 DOUBLE *tail = NULL;
 
 void main(void)
 {
+
     printf("\n######Double Linked List#####\n");
-    for (int i = 0; i < 10; i++)
+    for (size_t i = 0; i < 10; i++)
     {
         add(i);
     }
     printf("\n###### Front_End #####\n");
     print_double_front_end();
     printf("\n###### End_Front #####\n");
+
+    remove_double(0);
+    remove_double(9);
+    remove_double(5);
+
     print_double_end_front();
 }
 
@@ -83,5 +90,43 @@ void print_double_end_front(void)
             printf("%d-", current->value);
 
         current = current->pback;
+    }
+}
+
+void remove_double(int val)
+{
+    
+    DOUBLE *current;
+    current = tail;
+    if (current->value == val)
+    {
+        free(tail);
+        current->pback->pnext = NULL;
+        tail = current->pback;
+        return;
+    }
+    else
+    {
+        while (current != NULL)
+        {
+            if (current->pback->value == val)
+            {
+                if (current->pback->pback == NULL)
+                {
+                    free(current->pback);
+                    current->pback = NULL;
+                    head = current;
+                    return;
+                }
+                else
+                {
+                    free(current->pback);
+                    current->pback = current->pback->pback;
+                    current->pback->pback->pnext = current->pback->pnext;
+                    return;
+                }
+            }
+            current = current->pback;
+        }
     }
 }

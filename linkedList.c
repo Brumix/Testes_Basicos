@@ -41,7 +41,7 @@ void main(void)
         addreverse(i);
     }
     printLits(top);
-    for (int i = 0; i < 20; i ++)
+    for (int i = 1; i < 20; i ++)
     {
         removelist(&top, i);
         i++;
@@ -136,7 +136,7 @@ void removelist(VALUE **head, int valor)
             {
                 if (temp->pnext->pnext == NULL)
                 {
-                    free(temp->pnext->pnext);
+                    free(temp->pnext);
                     temp->pnext = NULL;
                     return;
                 }
@@ -144,7 +144,6 @@ void removelist(VALUE **head, int valor)
                 {
                     free(temp->pnext);
                     temp->pnext = temp->pnext->pnext;
-
                     return;
                 }
             }
