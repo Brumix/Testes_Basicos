@@ -18,12 +18,12 @@ void print_array_alocado(void);
 int duplica(int a);
 void print_lista_nomes(void);
 
-int main(int argc, char**argv)
+void main(int argc, char**argv)
 {
 
 
- // print_array_alocado();
- // print_lista_nomes();
+  print_array_alocado();
+  print_lista_nomes();
   Person *a= malloc(sizeof(Person)) ;
   
   a->name=malloc(sizeof(char)*10);
@@ -33,7 +33,6 @@ int main(int argc, char**argv)
   free(a);
 
 
-  return 0;
 }
 
 

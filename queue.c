@@ -13,7 +13,7 @@ void dequeue();
 
 QUEUE *head = NULL;
 
-int main(void)
+void main(void)
 {
 
     printf("###### Queue #####\n");

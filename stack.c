@@ -13,7 +13,7 @@ void pop();
 
 STACK *head = NULL;
 
-int main(void)
+void main(void)
 {
 
   printf("###### Stack #####\n");

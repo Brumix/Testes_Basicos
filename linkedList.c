@@ -15,7 +15,7 @@ void removelist(VALUE **head, int valor);
 VALUE *head = NULL;
 VALUE *top = NULL;
 
-int main(void)
+void main(void)
 {
     printf("###### Linked List#####\n");
     for (int i = 0; i < 20; i++)
@@ -50,7 +50,6 @@ int main(void)
     find(top, 14);
     printLits(top);
 
-    return 0;
 }
 
 void add(int valor)
