@@ -115,6 +115,7 @@ void addreverse(int valor)
     top = temp;
 }
 
+
 void removelist(VALUE **head, int valor)
 
 {
