@@ -63,3 +63,4 @@ testesbasicos:
 clean:
 	rm -rf *.out
 	rm -rf *.o
+	rm -rf output
